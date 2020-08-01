@@ -9,9 +9,13 @@ class Pessoa:
 if __name__ == '__main__':
     math = Pessoa(nome='Math', idade = 26)
     luciano = Pessoa(math, nome='Luciano', idade = 80)
-    print(Pessoa.cumprimentar(luciano))
-    print(id(luciano))
-    print(luciano.cumprimentar())
+    print(Pessoa.cumprimentar(luciano))     #mostram que todos os
+    print(id(luciano))                      #objetos usados aqui são
+    print(luciano.cumprimentar())           #o mesmo objeto
     print(luciano.nome)
-    for filho in luciano.filhos:
-        print(filho.nome)
+    for filho in luciano.filhos:            #mostra cada filho, caso contrário mostraria apenas
+        print(filho.nome)                   #um código de obeto
+
+    luciano.sobrenome = 'Ramalho'           #atributo dinânico
+    print(luciano.__dict__)                 #mostra os atributos do objeto
+    print(math.__dict__)
